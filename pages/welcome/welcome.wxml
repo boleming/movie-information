@@ -1,0 +1,7 @@
+<view class='container'>
+  <image class='logo' src="{{logo}}"></image>
+  <text class='user-name'>{{userName}}</text>
+  <view class='moto-container' catchtap='onTap'>
+    <text class='moto' catchtap='onTap'>{{moto}}</text>
+  </view>
+</view>

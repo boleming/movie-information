@@ -1,0 +1,21 @@
+<import src="movie-list/movie-list-template.wxml" />
+<import src="movie-grid/movie-grid-template.wxml" />
+  <view class="search">
+    <icon type="search" size="13" color="#405f80" class="search-img"></icon>
+    <input type="text" placeholder="你喜欢的电影是？" placeholder-class="placeholder" bindfocus="onBindFocus" bindconfirm="onBindChange"></input>
+    <image wx:if="{{!isShow}}" class="xx-img" src="/image/xx.png" bindtap="onImgTap"></image>  
+  </view>
+<view class="container" wx:if="{{isShow}}">
+  <view class="movie-template">
+    <template is="movieListTemplate" data="{{...inTheaters}}"/>
+  </view>
+  <view class="movie-template">
+    <template is="movieListTemplate" data="{{...comingSoon}}"/>
+  </view>
+  <view class="movie-template">
+    <template is="movieListTemplate" data="{{...top250Url}}"/>
+  </view>
+</view>
+<view class="seach-panel" wx:if="{{!isShow}}">
+  <template is="movieGridTemplate" data="{{...searchResult}}"></template>
+</view>
